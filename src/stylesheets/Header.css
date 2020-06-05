@@ -1,0 +1,58 @@
+{/*
+  TO DO: sticky header on scroll
+*/}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #F2F2F2;
+  padding: 2em 0;
+  padding-right: 5em;
+  align-items: center;
+}
+
+.logo {
+  padding-left: 5%;
+  font-size: 110%;
+}
+
+nav {
+ margin: 1.5em 0 0 5%;
+}
+
+header ul li {
+  display: inline-block;
+  padding: 0 3em 0 0;
+  font-size: 0.9em;
+}
+
+header ul li a {
+ text-decoration: none;
+ letter-spacing: 0.2em;
+ color: #3c3c3d;
+}
+
+li a.active {
+  color: #000000;
+  border-bottom: 2px solid #000000;
+  font-weight: 300;
+}
+
+li a:hover {
+ color: #B6B6B6;
+}
+
+@media screen and (min-width : 600px) {
+ .header-container {
+   flex-direction: row;
+   justify-content: space-between;
+ }
+ .logo {
+   margin-left: 10em;
+ }
+
+ nav {
+   align-self: center;
+   margin: 0 0 0 0;
+ }
+}

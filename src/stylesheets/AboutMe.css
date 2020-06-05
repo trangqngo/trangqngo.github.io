@@ -1,0 +1,41 @@
+
+.aboutContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding:  20px 4px;
+  justify-content: center;
+}
+
+.aboutColumn {
+  flex: 30%;
+  max-width: 30%;
+  padding: 0 4px;
+}
+
+.aboutColumn img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.aboutText {
+  text-align: left;
+  padding-left: 10%;
+}
+
+.aboutText h1 {
+  letter-spacing: 0.1em;
+}
+
+#about {
+  padding-left: 10%;
+  overflow-wrap: break-word;
+}
+
+
+@media screen and (max-width: 600px) {
+  .aboutColumn {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

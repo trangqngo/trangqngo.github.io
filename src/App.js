@@ -39,7 +39,7 @@ function App() {
           </Route>
 
           //NOTE: switch picks first route so homepage (/) must be last
-          <Route path="/">
+          <Route path={process.env.PUBLIC_URL + '/'}>
             <HomePage/>
           </Route>
         </Switch>

@@ -1,0 +1,174 @@
+.body {
+    background-color:#f0ece9;
+    font-family: Arial, sans-serif;
+    color: #33636F;
+}
+/* INSTRUCTIONS */
+.header {
+  margin-left: 60px;
+  letter-spacing: 5px;
+  word-spacing: 15px;
+}
+
+.instructions {
+  padding-left: 35px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  line-height: 150%;
+}
+
+.example {
+  padding-top: 20px;
+  margin: auto;
+  width: 50%;
+}
+
+.exampleImg {
+  display: inline;
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#foldingDemoLink, #printDemoLink {
+  display: inline;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.foldingDemoModal, .printDemoModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+#foldingDemoContent, #printDemoContent {
+  background-color: #f0ece9;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border: solid #33636F;
+  border-radius: 0.9rem;
+}
+
+img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.demoColumn p {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.demoRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.demoColumn {
+  float: left;
+  width: 25%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #33636F;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#canvas {
+    margin-top: 40px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* TOOLS  */
+.tools {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 5px;
+  background: #33636F;
+  height: 30px;
+  width: 90px;
+  color: #f0ece9;
+  border: none;
+  font-weight: bold;
+  font-size: small;
+  border-radius: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.left {
+  flex: 60%;
+}
+
+.right {
+  flex: 40%;
+}
+
+@media screen and (max-width: 600px) {
+  .left, .right { 
+    width: 100%;
+    float: left;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .demoColumn { 
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .demoColumn { 
+    width: 100%;
+  }
+}
+

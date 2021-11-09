@@ -65,16 +65,14 @@ let y = 0;
 let restore = []; 
 let index = -1;
 
-//given a mouse event, return mouse position in array [x,y]
+//given a mouse/touch event, return mouse/touch position in array [x,y]
 const getPos = e => {
   if (e.type === 'mousedown' || e.type === 'mousemove' || e.type === 'mouseup') {
       return [e.offsetX,e.offsetY];
   } else if (e.type === 'touchstart' || e.type === 'touchmove' || e.type === 'touchend') {
     var bcr = e.target.getBoundingClientRect();
     var x = e.touches[0].clientX - bcr.x;
-    console.log(`touch x is ${x}`);
     var y = e.touches[0].clientY - bcr.y;
-    console.log(`touch y is ${y}`);
     return [x,y];
   }
 }
@@ -85,9 +83,6 @@ const start = e => {
   isDrawing = true;
 };
 
-canvas.addEventListener('mousedown', start);
-canvas.addEventListener('touchstart', start);
-
 const draw = e => {
   if (isDrawing === true) {
     drawLine(x, y, getPos(e)[0], getPos(e)[1]);
@@ -95,9 +90,6 @@ const draw = e => {
     y = getPos(e)[1];
   }
 };
-
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('touchmove', draw);
 
 const stop = e => {
   if (isDrawing) {
@@ -109,8 +101,14 @@ const stop = e => {
   }
 };
 
+canvas.addEventListener('touchstart', start, false);
+canvas.addEventListener('touchmove', draw, false);
+canvas.addEventListener('touchend', stop, false);
+
+canvas.addEventListener('mousedown', start);
+canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', stop);
-canvas.addEventListener('touchend', stop);
+
 
 const drawLine = (x1, y1, x2, y2) => {
   ctx.beginPath();
@@ -147,6 +145,19 @@ const drawLine = (x1, y1, x2, y2) => {
     reflectY(r1[0],r1[1],r1[2],r1[3]);
   }
 }
+
+// Prevent scrolling when touching the canvas
+// source code: https://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
+document.body.addEventListener("touchstart", function (e) {
+  if (e.target == canvas) {
+    e.preventDefault();
+  }
+}, {passive: false});
+document.body.addEventListener("touchmove", function (e) {
+  if (e.target == canvas) {
+    e.preventDefault();
+  }
+}, {passive: false});
 
 //TOOLS: undo, clear and download design
 

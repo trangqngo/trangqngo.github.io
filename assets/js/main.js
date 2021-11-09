@@ -65,32 +65,52 @@ let y = 0;
 let restore = []; 
 let index = -1;
 
-canvas.addEventListener('mousedown', e => {
-  x = e.offsetX;
-  y = e.offsetY;
-  isDrawing = true;
-});
-
-canvas.addEventListener('mousemove', e => {
-  // let data = ctx.getImageData(x, y, 1, 1).data;
-  
-  if (isDrawing === true) {
-    drawLine(x, y, e.offsetX, e.offsetY);
-    x = e.offsetX;
-    y = e.offsetY;
+//given a mouse event, return mouse position in array [x,y]
+const getPos = e => {
+  if (e.type === 'mousedown' || e.type === 'mousemove' || e.type === 'mouseup') {
+      return [e.offsetX,e.offsetY];
+  } else if (e.type === 'touchstart' || e.type === 'touchmove' || e.type === 'touchend') {
+    var bcr = e.target.getBoundingClientRect();
+    var x = e.touches[0].clientX - bcr.x;
+    console.log(`touch x is ${x}`);
+    var y = e.touches[0].clientY - bcr.y;
+    console.log(`touch y is ${y}`);
+    return [x,y];
   }
-});
+}
 
-canvas.addEventListener('mouseup', e => {
+const start = e => {
+  x = getPos(e)[0];
+  y = getPos(e)[1];
+  isDrawing = true;
+};
+
+canvas.addEventListener('mousedown', start);
+canvas.addEventListener('touchstart', start);
+
+const draw = e => {
+  if (isDrawing === true) {
+    drawLine(x, y, getPos(e)[0], getPos(e)[1]);
+    x = getPos(e)[0];
+    y = getPos(e)[1];
+  }
+};
+
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('touchmove', draw);
+
+const stop = e => {
   if (isDrawing) {
-    drawLine(x, y, e.offsetX, e.offsetY);
     x = 0;
     y = 0;
     isDrawing = false;
     restore.push(ctx.getImageData(0,0,canvas.width,canvas.height));
     index ++;
   }
-});
+};
+
+canvas.addEventListener('mouseup', stop);
+canvas.addEventListener('touchend', stop);
 
 const drawLine = (x1, y1, x2, y2) => {
   ctx.beginPath();

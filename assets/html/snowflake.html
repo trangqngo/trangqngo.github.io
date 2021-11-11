@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paper Flower Designer</title>
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../css/main.min.css" />
+    <script src="../js/snowflake.js" async></script>
+</head>
+
+<body class="body" id="body">
+    <div class="topnav">
+        <!-- small flower/snowflake design -->
+        <a href="../../index.html">Paper Flower Designer</a>
+        <a href="./flower.html">5-petal</a>
+        <a class="active" href="snowflake.html">6-petal</a>
+    </div>
+    <div class="row">
+        <div class="left">
+            <div class="instructions">
+                <!-- <h3><b>Welcome!</b> <br /></h3> -->
+                Draw in the darker-colored wedge to start create your very own 6-petal flower (or a snowflake!) design.<br />
+                Remember to only draw <b>one half of the petal</b> in the drawing wedge. Take a look at these two
+                examples!<br />
+                <div class="example">
+                    <img class="exampleImg" src="/assets/images/canvas-examples/snowflake1.png">
+                    <img class="exampleImg" src="/assets/images/canvas-examples/snowflake2.png">
+                </div>
+                <br />
+                When you are done, cut out your design using one of two ways: <br />
+                1. <b>Draw-it-yourself:</b> Follow <div id="foldingDemoLink">these instructions</div> on how to fold the
+                paper, draw on your design and cut out your own flower/snowflake. <br />
+                2. <b>Print out your design:</b> Click the download button to download and print out your design.
+                If you are using one-sided colored paper, make sure to <b>print the design on the white side </b>
+                (or the side you don't care about!). Follow <div id="printDemoLink">these instructions</div> on how to
+                fold the paper and cut out your design.<br />
+            </div>
+        </div>
+        <div class="right">
+            <div class="drawingZone">
+                <div class="drawingZoneNote">
+                    draw half of the petal in the darker-colored wedge!
+                </div>
+            </div>
+            <canvas id="canvas" width="320" height="320"></canvas>
+            <div class="tools">
+                <button id="undo">undo</button>
+                <button id="clear">clear</button>
+                <button id="download">download</button>
+            </div>
+        </div>
+    </div>
+    <div class="backdrop">
+        <div class="foldingDemoModal">
+            <div id="foldingDemoContent">
+                <span class="close">&times;</span>
+                <p>
+                    <b>Draw your own fold-n-cut design<br /></b>
+                    <!-- https://www.firstpalette.com/craft/folding-paper-flowers-5petal.html -->
+                <div class="demoRow">
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-folding/snowflake-1.png"><br />
+                        <p>Get a piece of square paper. Turn it rightside up (i.e. you should be facing the "pretty"
+                            side!)<br /></p>
+                    </div>
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-folding/snowflake-2.png"><br />
+                        <p>Fold the paper in half diagonally to make a triangle.<br /></p>
+                    </div>
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-folding/snowflake-3.png"><br />
+                        <p>Fold the paper in half diagonally again.<br /></p>
+                    </div>
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-folding/snowflake-4.png"><br />
+                        <p>Divide the triangle into three parts (you can use a protractor for extra precision). <br /></p>
+                    </div>
+                    
+                </div>
+                <div class="demoRow">
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-folding/snowflake-5.png"><br />
+                        <p>Fold the left section, then the right section.<br /></p>
+                    </div>
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-folding/snowflake-6.png"><br />
+                        <p>Flip the paper over and cut along the horizontal edge so that you end up with a wedge.<br /></p>
+                    </div>
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-folding/snowflake-7.png"><br />
+                        <p>Draw your design on the wedge, similar to what you have drawn in the darker-colored drawing
+                            wedge!<br /></p>
+                    </div>
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-folding/snowflake-8.png"><br />
+                        <p>Cut along the lines. Unfold the paper, and you're done! <br /></p>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </div>
+
+        <div class="printDemoModal">
+            <div id="printDemoContent">
+                <span class="close">&times;</span>
+                <p>
+                    <b>Cut out your printed design<br /></b>
+                <div class="demoRow">
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-print/snowflake-1.png"><br />
+                        <p>Cut out the square. Make sure you are positioning the square so that the drawing wedge is pointing up. 
+                            Flip the paper over.<br /></p>
+                    </div>
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-print/snowflake-2.png"><br />
+                        <p>Fold the paper in half diagonally. Your fold should align with the thicker grid line.<br /></p>
+                    </div>
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-print/snowflake-3.png"><br />
+                        <p>Fold the bottom-left corner up towards the top-right corner. The paper triangle should has two grid lines.<br /></p>
+                    </div>
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-print/snowflake-4.png"><br />
+                        <p>Fold the left section, then the right section according to the two grid lines.<br /></p>
+                    </div>
+                </div>
+                <div class="demoRow">
+                    <div class="demoColumn">
+                        <img src="/assets/images/demo-print/snowflake-5.png"><br />
+                        <p>Flip the paper over and cut along the lines. Unfold the paper, and you're done!<br /></p>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

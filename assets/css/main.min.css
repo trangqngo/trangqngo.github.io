@@ -1,8 +1,54 @@
 .body {
-    background-color:#f0ece9;
-    font-family: Arial, sans-serif;
-    color: #33636F;
+  background-color:#f0ece9;
+  font-family: Arial, sans-serif;
+  color: #33636F;
+  margin: 0;
+  padding: 0;
 }
+
+/*NAVIGATION BAR*/
+.topnav {
+  background-color: #E1C6C2;
+  overflow: hidden;
+}
+
+.topnav a{
+  float: left;
+  color: #33636F;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #DFAA97;
+  color: #33636F;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color:  #33636F;
+  color: #f0ece9;
+}
+
+/*HOMEPAGE: INTRO*/
+.intro {
+  font-weight: bold;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 30px;
+  border-radius: 0.9rem;
+  padding: 20px;
+  line-height: 150%;
+}
+
+.intro a {
+  color:  #33636F;
+}
+
 /* INSTRUCTIONS */
 .header {
   margin-left: 60px;
@@ -11,9 +57,7 @@
 }
 
 .instructions {
-  padding-left: 35px;
-  padding-top: 20px;
-  padding-bottom: 50px;
+  padding: 50px 35px 0px 35px;
   line-height: 150%;
 }
 
@@ -110,12 +154,31 @@ img {
 }
 
 #canvas {
-    margin-top: 40px;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.drawingZone {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.drawingZoneNote {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: fit-content;
+  color: #33636F;
+  padding: 7px 7px 0 7px;
+  font-weight: bold;
 }
 
 /* TOOLS  */
@@ -126,7 +189,7 @@ img {
 }
 
 button {
-  margin: 0 5px;
+  margin: 0 5px 50px 5px;
   background: #33636F;
   height: 30px;
   width: 90px;
@@ -171,4 +234,3 @@ button {
     width: 100%;
   }
 }
-

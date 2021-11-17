@@ -37,16 +37,35 @@
 /*HOMEPAGE: INTRO*/
 .intro {
   font-weight: bold;
-  margin-right: 30px;
-  margin-left: 30px;
-  margin-top: 30px;
   border-radius: 0.9rem;
-  padding: 20px;
   line-height: 150%;
+  margin: auto;
+  width: 80%;
+  padding-bottom: 30px;
+}
+
+.introContent {
+  padding: 30px 0 30px 0;
 }
 
 .intro a {
   color:  #33636F;
+}
+
+.egRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.egCol {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* INSTRUCTIONS */
@@ -223,14 +242,17 @@ button {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1020px) {
   .demoColumn { 
     width: 50%;
   }
+   .egCol {
+    width: calc(25% - 10px);
+  }
 }
 
-@media screen and (max-width: 600px) {
-  .demoColumn { 
+@media screen and (max-width: 720px) {
+  .demoColumn, .egCol { 
     width: 100%;
-  }
+  } 
 }
